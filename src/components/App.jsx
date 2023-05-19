@@ -32,11 +32,8 @@ const App = () => {
   };
 
   const countPositiveFeedbackPercentage = () => {
-    let positiveFeedback = 0;
-    if (countTotalFeedback() > 0) {
-      positiveFeedback = Math.round((good / countTotalFeedback()) * 100);
-    }
-    return positiveFeedback;
+    const total = countTotalFeedback();
+    return total > 0 ? Math.round((good / total) * 100) : 0;
   };
 
     return (
